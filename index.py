@@ -41,14 +41,18 @@ def checkWin():
     return win
 
 def player1():
-    s = int(input())
+    user_number = raw_input()
+    try:
+        s = int(user_number)
 
-    if s > -1 and s < 9:
-        board[s] = "X"
-    else:
-        print "Invalid Input"
-        display()
-        player1()  
+        if s > -1 and s < 9:
+            board[s] = "X"
+        else:
+            print "Invalid Input"
+            display()
+            player1() 
+    except ValueError:
+        sys.exit()
 
 def player2():
     for x in range(0, 9):
