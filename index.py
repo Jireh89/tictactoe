@@ -45,7 +45,7 @@ def player1():
     try:
         s = int(user_number)
 
-        if s > -1 and s < 9:
+        if s > -1 and s < 9 and board[s] == "_":
             board[s] = "X"
         else:
             print "Invalid Input"
